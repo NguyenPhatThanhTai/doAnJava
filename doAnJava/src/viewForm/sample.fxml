@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="395.0" prefWidth="538.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viewForm.Controller">
+   <children>
+      <TabPane layoutX="1.0" prefHeight="393.0" prefWidth="538.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Đăng nhập">
+            <content>
+              <AnchorPane prefHeight="364.0" prefWidth="509.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+                     <children>
+                        <Button fx:id="btnDangNhap" layoutX="29.0" layoutY="315.0" mnemonicParsing="false" onAction="#DangNhap" prefHeight="34.0" prefWidth="325.0" text="Đăng nhập" textFill="#090909" />
+                        <Button fx:id="btnHuy" layoutX="363.0" layoutY="315.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="136.0" text="Hủy" />
+                        <TextField fx:id="txtTaiKhoan" layoutX="26.0" layoutY="127.0" prefHeight="46.0" prefWidth="476.0" promptText="Tài khoản" />
+                        <TextField fx:id="txtMatKhau" layoutX="26.0" layoutY="194.0" prefHeight="50.0" prefWidth="476.0" promptText="Mật khẩu" />
+                        <CheckBox layoutX="29.0" layoutY="286.0" mnemonicParsing="false" text="Ghi nhớ đăng nhập" />
+                        <Label layoutX="148.0" layoutY="14.0" prefHeight="98.0" prefWidth="221.0" text="Đăng nhập">
+                           <font>
+                              <Font size="43.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Đăng ký">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="264.0" prefWidth="406.0">
+                     <children>
+                        <Button fx:id="btnDangNhap1" layoutX="24.0" layoutY="298.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="318.0" text="Đăng ký" textFill="#090909" />
+                        <Button fx:id="btnDangNhap2" layoutX="354.0" layoutY="298.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="147.0" text="Hủy" textFill="#090909" />
+                        <TextField layoutX="23.0" layoutY="25.0" prefHeight="39.0" prefWidth="479.0" promptText="Id" />
+                        <TextField layoutX="22.0" layoutY="76.0" prefHeight="38.0" prefWidth="478.0" promptText="Email" />
+                        <TextField layoutX="22.0" layoutY="129.0" prefHeight="37.0" prefWidth="479.0" promptText="UserName" />
+                        <TextField layoutX="22.0" layoutY="182.0" prefHeight="39.0" prefWidth="480.0" promptText="Password" />
+                        <TextField layoutX="23.0" layoutY="234.0" prefHeight="41.0" prefWidth="478.0" promptText="RoleId" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</Pane>
