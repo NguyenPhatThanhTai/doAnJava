@@ -3,12 +3,11 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viewForm.Controller.Controller">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viewForm.Controller.mainController">
    <children>
       <Pane prefHeight="400.0" prefWidth="600.0">
          <children>
-            <Label layoutX="239.0" layoutY="183.0" text="Đăng nhập thành công" />
+            <Label fx:id="lbUserName" layoutX="28.0" layoutY="28.0" text="Xin chào" />
          </children>
       </Pane>
    </children>

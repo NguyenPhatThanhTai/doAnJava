@@ -6,10 +6,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+
 public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
+        primaryStage.setResizable(false);
         Parent root = FXMLLoader.load(getClass().getResource("View/sample.fxml"));
         primaryStage.setTitle("Đăng nhập");
         primaryStage.setScene(new Scene(root));
