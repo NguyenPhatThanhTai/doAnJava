@@ -13,6 +13,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import javax.swing.*;
 import java.io.IOException;
@@ -46,6 +47,7 @@ public class loginController implements Initializable {
                 mainController.showInfomation(txtTaiKhoan.getText());
 
                 Stage stage = new Stage();
+                stage.initStyle(StageStyle.UNDECORATED); // tắt thanh top bar
                 stage.setScene(new Scene(root));
                 stage.setTitle("Main");
                 stage.show();
