@@ -69,6 +69,7 @@ public class doDao extends connectSQL {
     }
 
     public ObservableList<customerModel> getAllCustomer(){
+        String sex = "";
         String sql ="select * from [Inf_Customers]";
         Connection conn =super.getJDBCConnection();
         ObservableList<customerModel> list = FXCollections.observableArrayList();
@@ -77,8 +78,14 @@ public class doDao extends connectSQL {
             ResultSet rs = stmt.executeQuery(sql);
 
             while (rs.next()){
+                if (rs.getString("Customer_Sex").equals("1")){
+                    sex = "Nam";
+                }
+                else {
+                    sex = "Nữ";
+                }
                 list.add(new customerModel(rs.getString("Customer_Id"), rs.getString("Customer_Name"),
-                        rs.getString("Customer_Sex"), rs.getString("Customer_Birth"), rs.getString("Customer_Email"),
+                        sex, rs.getString("Customer_Birth"), rs.getString("Customer_Email"),
                         rs.getString("Customer_Phone"), rs.getString("Customer_TimeAdd")));
             }
         }catch (SQLException e){

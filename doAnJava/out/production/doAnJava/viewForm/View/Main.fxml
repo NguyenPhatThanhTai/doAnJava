@@ -12,22 +12,22 @@
 
 <AnchorPane prefHeight="797.0" prefWidth="1340.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viewForm.Controller.mainController">
    <children>
-      <Pane layoutX="217.0" prefHeight="797.0" prefWidth="1122.0" style="-fx-background-color: #DFE3EE;">
+      <Pane layoutX="-1.0" prefHeight="797.0" prefWidth="1340.0" style="-fx-background-color: #DFE3EE;">
          <children>
-            <AnchorPane layoutX="13.0" layoutY="14.0" prefHeight="41.0" prefWidth="1100.0" style="-fx-background-color: #ffff;">
+            <AnchorPane layoutX="13.0" layoutY="14.0" prefHeight="41.0" prefWidth="1311.0" style="-fx-background-color: #ffff;">
                <children>
-                  <Label fx:id="lbUserName" layoutX="5.0" layoutY="10.0" prefHeight="21.0" prefWidth="968.0" text="Xin chào">
+                  <Label fx:id="lbUserName" layoutX="5.0" layoutY="10.0" prefHeight="21.0" prefWidth="1128.0" text="Xin chào">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </Label>
-                  <JFXButton layoutX="1040.0" layoutY="5.0" minWidth="44.0" prefHeight="32.0" prefWidth="44.0" style="-fx-background-color: #D25F5F;" text="X" />
-                  <JFXButton layoutX="979.0" layoutY="5.0" minWidth="44.0" prefHeight="32.0" prefWidth="44.0" style="-fx-background-color: #1E7BA6;" text="_" />
+                  <JFXButton fx:id="btnQuit" layoutX="1243.0" layoutY="5.0" minWidth="44.0" onAction="#Quit" prefHeight="32.0" prefWidth="44.0" style="-fx-background-color: #D25F5F;" text="X" />
+                  <JFXButton fx:id="btnMinimized" layoutX="1183.0" layoutY="5.0" minWidth="44.0" onAction="#Minimized" prefHeight="32.0" prefWidth="44.0" style="-fx-background-color: #1E7BA6;" text="_" />
                </children>
             </AnchorPane>
-            <BorderPane fx:id="paneLoad" layoutX="14.0" layoutY="68.0" prefHeight="718.0" prefWidth="1100.0" />
+            <BorderPane fx:id="paneLoad" layoutX="252.0" layoutY="66.0" prefHeight="717.0" prefWidth="1071.0" style="-fx-background-color: #ffff;" />
          </children></Pane>
-      <VBox prefHeight="797.0" prefWidth="218.0" style="-fx-background-color: #ffffff;">
+      <VBox layoutX="13.0" layoutY="67.0" prefHeight="717.0" prefWidth="218.0" style="-fx-background-color: #ffffff;">
          <children>
             <ImageView fitHeight="171.0" fitWidth="218.0" pickOnBounds="true" preserveRatio="true">
                <image>

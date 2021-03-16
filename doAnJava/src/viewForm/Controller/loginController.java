@@ -11,6 +11,8 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonBar;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -18,6 +20,7 @@ import javafx.stage.StageStyle;
 import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -64,9 +67,20 @@ public class loginController implements Initializable {
         }
     }
 
-    public void openNewWindows(ActionEvent e){
-        txtTaiKhoan.setText("");
-        txtMatKhau.setText("");
+    public void Quit(){
+        ButtonType foo = new ButtonType("Ok tôi thoát", ButtonBar.ButtonData.OK_DONE);
+        ButtonType bar = new ButtonType("Không tôi nhấn nhầm", ButtonBar.ButtonData.CANCEL_CLOSE);
+        Alert alert = new Alert(Alert.AlertType.WARNING,
+                "Bạn có chắc chắn muốn thoát",
+                foo,
+                bar);
+
+        alert.setTitle("Xác nhận thoát chương trình");
+        Optional<ButtonType> result = alert.showAndWait();
+
+        if (result.orElse(bar) == foo) {
+            System.exit(1);
+        }
     }
 
     @Override
