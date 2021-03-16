@@ -1,7 +1,10 @@
 package DAO;
 
 import Connection.connectSQL;
+import Model.customerModel;
 import Model.userModel;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import jbcrypt.BCrypt;
 
 import java.sql.*;
@@ -45,13 +48,14 @@ public class doDao extends connectSQL {
     }
     public boolean checkLogin(String Username, String Password){
         boolean check = false;
-        String sql ="select * from [DangNhap] where Username = " + "'" + Username + "'";
+        String sql ="select * from [Account_Staff] where Staff_Account = " + "'" + Username + "'";
         Connection conn =super.getJDBCConnection();
         try {
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
             if (rs.next()) {
-                if(Username.equals(rs.getString("UserName")) && BCrypt.checkpw(Password, rs.getString("Password"))){
+//                if(Username.equals(rs.getString("Staff_Account")) && BCrypt.checkpw(Password, rs.getString("Staff_Password"))){
+                if(Username.equals(rs.getString("Staff_Account")) && Password.equals(rs.getString("Staff_Password"))){
                     check = true;
                 }
             }
@@ -63,4 +67,24 @@ public class doDao extends connectSQL {
         }
         return check;
     }
+
+    public ObservableList<customerModel> getAllCustomer(){
+        String sql ="select * from [Inf_Customers]";
+        Connection conn =super.getJDBCConnection();
+        ObservableList<customerModel> list = FXCollections.observableArrayList();
+        try {
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+
+            while (rs.next()){
+                list.add(new customerModel(rs.getString("Customer_Id"), rs.getString("Customer_Name"),
+                        rs.getString("Customer_Sex"), rs.getString("Customer_Birth"), rs.getString("Customer_Email"),
+                        rs.getString("Customer_Phone"), rs.getString("Customer_TimeAdd")));
+            }
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        return list;
+    }
+
 }

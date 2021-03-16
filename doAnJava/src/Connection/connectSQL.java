@@ -10,7 +10,7 @@ public class connectSQL {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             String UserName = "sa";
             String PassWord = "123";
-            String url = "jdbc:sqlserver://localhost:1433;databaseName=JSP";
+            String url = "jdbc:sqlserver://localhost:1433;databaseName=ProjectOne";
             connection = DriverManager.getConnection(url, UserName, PassWord);
             if(connection != null){
                 System.out.println("Success");

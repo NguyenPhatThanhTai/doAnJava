@@ -13,7 +13,7 @@
 
 <AnchorPane id="loginForm" prefHeight="719.0" prefWidth="1111.0" style="-fx-background-color: linear-gradient(to right, #eb5757, #000000);;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viewForm.Controller.loginController">
    <children>
-      <AnchorPane layoutY="-4.0" prefHeight="777.0" prefWidth="1111.0" style="-fx-background-color: #20120f;">
+      <AnchorPane layoutY="-4.0" prefHeight="777.0" prefWidth="1111.0" style="-fx-background-color: #3C6B54;">
          <children>
             <ImageView fitHeight="602.0" fitWidth="682.0" layoutY="161.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -23,7 +23,7 @@
             <JFXButton layoutX="1043.0" layoutY="14.0" minWidth="44.0" prefHeight="32.0" prefWidth="44.0" style="-fx-background-color: #D25F5F;" text="X" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="555.0" layoutY="94.0" prefHeight="636.0" prefWidth="509.0" style="-fx-background-color: #693137;">
+      <AnchorPane layoutX="555.0" layoutY="94.0" prefHeight="636.0" prefWidth="509.0" style="-fx-background-color: #7B8BAD;">
          <children>
             <Label layoutX="133.0" layoutY="57.0" prefHeight="78.0" prefWidth="283.0" text="Đăng nhập" textFill="#fafafa">
                <font>

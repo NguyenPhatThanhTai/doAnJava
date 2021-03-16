@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="742.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viewForm.Controller.customerInfController">
+   <children>
+      <TableView fx:id="tableListCustomer" layoutX="20.0" layoutY="304.0" prefHeight="401.0" prefWidth="1061.0">
+         <columns>
+            <TableColumn fx:id="colCustomerId" prefWidth="46.0" text="Id" />
+            <TableColumn fx:id="colCustomerName" prefWidth="165.0" text="Tên khách hàng" />
+            <TableColumn fx:id="colCustomerSex" prefWidth="165.0" text="Giới tính" />
+            <TableColumn fx:id="colCustomerBirth" prefWidth="165.0" text="Ngày sinh" />
+            <TableColumn fx:id="colCustomerEmail" prefWidth="165.0" text="Email" />
+            <TableColumn fx:id="colCustomerPhone" prefWidth="165.0" text="Số điện thoại" />
+            <TableColumn fx:id="colCustomerTimeAdd" prefWidth="165.0" text="Thời gian thêm" />
+         </columns>
+      </TableView>
+      <JFXButton fx:id="btnTest" layoutX="227.0" layoutY="161.0" onAction="#test" text="Click test" />
+   </children>
+</AnchorPane>
