@@ -90,6 +90,21 @@ public class customerInfController implements Initializable {
     @FXML
     private TableView<customerModel> tableListCustomer;
 
+    public void loadData(){
+        doDao dao = new doDao();
+        // khi load form sẽ hiển thị luôn
+        colCustomerId.setCellValueFactory(new PropertyValueFactory<customerModel, String>("Customer_Id"));
+        colCustomerName.setCellValueFactory(new PropertyValueFactory<customerModel, String>("Customer_Name"));
+        colCustomerSex.setCellValueFactory(new PropertyValueFactory<customerModel, String>("Customer_Sex"));
+        colCustomerBirth.setCellValueFactory(new PropertyValueFactory<customerModel, String>("Customer_Birth"));
+        colCustomerEmail.setCellValueFactory(new PropertyValueFactory<customerModel, String>("Customer_Email"));
+        colCustomerPhone.setCellValueFactory(new PropertyValueFactory<customerModel, String>("Customer_Phone"));
+        colCustomerTimeAdd.setCellValueFactory(new PropertyValueFactory<customerModel, String>("Customer_TimeAdd"));
+
+        listCustomer = dao.getAllCustomer();
+        tableListCustomer.setItems(listCustomer);
+    }
+
     public void getItemFromTableView(){
         tableListCustomer.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
@@ -113,22 +128,6 @@ public class customerInfController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
-        doDao dao = new doDao();
-        // khi load form sẽ hiển thị luôn
-        colCustomerId.setCellValueFactory(new PropertyValueFactory<customerModel, String>("Customer_Id"));
-        colCustomerName.setCellValueFactory(new PropertyValueFactory<customerModel, String>("Customer_Name"));
-        colCustomerSex.setCellValueFactory(new PropertyValueFactory<customerModel, String>("Customer_Sex"));
-        colCustomerBirth.setCellValueFactory(new PropertyValueFactory<customerModel, String>("Customer_Birth"));
-        colCustomerEmail.setCellValueFactory(new PropertyValueFactory<customerModel, String>("Customer_Email"));
-        colCustomerPhone.setCellValueFactory(new PropertyValueFactory<customerModel, String>("Customer_Phone"));
-        colCustomerTimeAdd.setCellValueFactory(new PropertyValueFactory<customerModel, String>("Customer_TimeAdd"));
-
-        listCustomer = dao.getAllCustomer();
-        tableListCustomer.setItems(listCustomer);
-    }
-
-    public void test(){
-        System.out.println("Ok");
+        loadData();
     }
 }

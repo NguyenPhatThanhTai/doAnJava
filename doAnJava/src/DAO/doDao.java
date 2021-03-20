@@ -10,7 +10,7 @@ import jbcrypt.BCrypt;
 import java.sql.*;
 
 public class doDao extends connectSQL {
-    public boolean insert(userModel user) {
+    public boolean insertCustomer(userModel user) {
 //        int roleId = 0;
         String sql ="INSERT INTO [DangNhap](Id, email, userName, passWord, roleID) VALUES (?,?,?,?,?)";
         Connection conn =super.getJDBCConnection();
@@ -46,6 +46,7 @@ public class doDao extends connectSQL {
             return false;
         }
     }
+
     public boolean checkLogin(String Username, String Password){
         boolean check = false;
         String sql ="select * from [Account_Staff] where Staff_Account = " + "'" + Username + "'";

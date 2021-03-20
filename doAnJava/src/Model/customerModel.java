@@ -10,6 +10,7 @@ public class customerModel {
     private String Customer_TimeAdd;
 
     public customerModel() {
+
     }
 
     public customerModel(String customer_Id, String customer_Name, String customer_Sex, String customer_Birth, String customer_Email, String customer_Phone, String customer_TimeAdd) {

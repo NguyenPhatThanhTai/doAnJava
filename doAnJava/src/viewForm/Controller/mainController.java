@@ -21,6 +21,7 @@ import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Optional;
 import java.util.ResourceBundle;
@@ -38,8 +39,10 @@ public class mainController implements Initializable {
     private JFXButton btnMinimized;
 
     public void showInfomation(String name){
-        Date date = new Date();
-        lbUserName.setText("Xin chào: " + name + ", bây giờ là: " + date.getTime());
+        SimpleDateFormat formatter= new SimpleDateFormat("HH:mm 'ngày' dd-MM-yyyy ");
+        Date date = new Date(System.currentTimeMillis());
+        System.out.println(formatter.format(date));
+        lbUserName.setText("Xin chào: " + name + ", bây giờ là: " + formatter.format(date));
     }
 
     public void showCustomerPage(){
@@ -65,8 +68,7 @@ public class mainController implements Initializable {
         ButtonType bar = new ButtonType("Không tôi nhấn nhầm", ButtonBar.ButtonData.CANCEL_CLOSE);
         Alert alert = new Alert(Alert.AlertType.WARNING,
                 "Bạn có chắc chắn muốn thoát",
-                foo,
-                bar);
+                foo, bar);
 
         alert.setTitle("Xác nhận thoát chương trình");
         Optional<ButtonType> result = alert.showAndWait();
