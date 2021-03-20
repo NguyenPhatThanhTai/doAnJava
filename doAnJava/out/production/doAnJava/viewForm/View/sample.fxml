@@ -9,59 +9,67 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="loginForm" prefHeight="712.0" prefWidth="1111.0" style="-fx-background-color: linear-gradient(to right, #eb5757, #000000);;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viewForm.Controller.loginController">
    <children>
-      <AnchorPane prefHeight="776.0" prefWidth="1111.0" style="-fx-background-color: #3C6B54;">
+      <AnchorPane prefHeight="773.0" prefWidth="1111.0" style="-fx-background-color: #DFE3EE;">
          <children>
-            <ImageView fitHeight="652.0" fitWidth="665.0" layoutX="-43.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Picture/Pic/161712919_2843877049217004_2570415608547098846_n.png" />
-               </image>
-            </ImageView>
-            <JFXButton fx:id="btnThoat" layoutX="1050.0" layoutY="8.0" minWidth="44.0" onAction="#Quit" prefHeight="32.0" prefWidth="44.0" style="-fx-background-color: #D25F5F;" text="X" />
-            <BorderPane layoutX="534.0" layoutY="77.0" prefHeight="673.0" prefWidth="551.0" style="-fx-background-color: #78BD75;" />
-         </children>
-      </AnchorPane>
-      <AnchorPane layoutX="555.0" layoutY="94.0" prefHeight="636.0" prefWidth="509.0" style="-fx-background-color: #3C6B54;">
-         <children>
-            <Label layoutX="133.0" layoutY="57.0" prefHeight="78.0" prefWidth="283.0" text="Đăng nhập" textFill="WHITE">
-               <font>
-                  <Font name="Arial" size="52.0" />
-               </font>
-            </Label>
-            <JFXCheckBox layoutX="47.0" layoutY="398.0" prefHeight="18.0" prefWidth="123.0" text="Giữ đăng nhập" textFill="WHITE" unCheckedColor="WHITE" />
-            <Hyperlink layoutX="372.0" layoutY="394.0" text="Quên mật khẩu" textFill="WHITE" />
-            <JFXButton fx:id="btnDangNhap" layoutX="33.0" layoutY="431.0" onAction="#DangNhap" prefHeight="50.0" prefWidth="455.0" ripplerFill="#5f90cf" style="-fx-background-color: #37844d" text="Đăng nhập" textAlignment="CENTER" textFill="WHITE" />
-            <ImageView fitHeight="64.0" fitWidth="65.0" layoutX="161.0" layoutY="546.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Picture/Icon/facebook (1).png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="64.0" fitWidth="64.0" layoutX="322.0" layoutY="546.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Picture/Icon/search.png" />
-               </image>
-            </ImageView>
-            <Label layoutX="100.0" layoutY="144.0" prefHeight="15.0" prefWidth="320.0" text="Nếu không có tài khoản, mật khẩu vui lòng liên hệ  quản lý" textFill="WHITE" textOverrun="CLIP">
-               <font>
-                  <Font name="Arial" size="12.0" />
-               </font>
-            </Label>
-            <JFXTextField fx:id="txtTaiKhoan" focusColor="#9ec9a7" layoutX="47.0" layoutY="241.0" prefHeight="32.0" prefWidth="421.0" promptText="Tài khoản" unFocusColor="WHITE">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </JFXTextField>
-            <JFXPasswordField fx:id="txtMatKhau" focusColor="#9ec9a7" layoutX="50.0" layoutY="310.0" prefHeight="32.0" prefWidth="421.0" promptText="Mật khẩu" unFocusColor="WHITE">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </JFXPasswordField>
-            <Label layoutX="258.0" layoutY="560.0" text="Hoặc" textFill="WHITE" />
-            <Label layoutX="205.0" layoutY="513.0" prefHeight="18.0" prefWidth="138.0" text="Hoặc đăng nhập bằng" textFill="WHITE" />
+            <AnchorPane layoutX="556.0" layoutY="86.0" prefHeight="661.0" prefWidth="521.0" style="-fx-background-color: linear-gradient(to right, #237a57, #093028);">
+               <children>
+                  <Label layoutX="130.0" layoutY="37.0" prefHeight="78.0" prefWidth="283.0" text="Đăng nhập" textFill="WHITE">
+                     <font>
+                        <Font name="Arial" size="52.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="112.0" layoutY="108.0" prefHeight="15.0" prefWidth="320.0" text="Nếu không có tài khoản, mật khẩu vui lòng liên hệ  quản lý" textFill="WHITE" textOverrun="CLIP">
+                     <font>
+                        <Font name="Arial" size="12.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="txtTaiKhoan" focusColor="#9ec9a7" layoutX="50.0" layoutY="223.0" prefHeight="32.0" prefWidth="421.0" promptText="Tài khoản" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="WHITE">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXPasswordField fx:id="txtMatKhau" focusColor="#9ec9a7" layoutX="50.0" layoutY="298.0" prefHeight="32.0" prefWidth="421.0" promptText="Mật khẩu" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="WHITE">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </JFXPasswordField>
+                  <JFXCheckBox layoutX="69.0" layoutY="363.0" prefHeight="18.0" prefWidth="123.0" text="Giữ đăng nhập" textFill="WHITE" unCheckedColor="WHITE" />
+                  <JFXButton fx:id="btnDangNhap" buttonType="RAISED" layoutX="50.0" layoutY="414.0" onAction="#DangNhap" prefHeight="50.0" prefWidth="429.0" ripplerFill="#5f90cf" style="-fx-background-color: #267046; -fx-background-radius: 100;" text="Đăng nhập" textAlignment="CENTER" textFill="WHITE" />
+                  <Hyperlink layoutX="371.0" layoutY="359.0" text="Quên mật khẩu" textFill="WHITE" />
+                  <Label layoutX="192.0" layoutY="487.0" prefHeight="18.0" prefWidth="138.0" text="Hoặc đăng nhập bằng" textFill="WHITE" />
+                  <ImageView fitHeight="64.0" fitWidth="64.0" layoutX="122.0" layoutY="565.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Picture/Icon/search.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="64.0" fitWidth="65.0" layoutX="318.0" layoutY="569.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Picture/Icon/facebook (1).png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="235.0" layoutY="590.0" text="Hoặc" textFill="WHITE" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="41.0" layoutY="20.0" prefHeight="44.0" prefWidth="1036.0" style="-fx-background-color: white;">
+               <children>
+                  <JFXButton fx:id="btnThoat" buttonType="RAISED" layoutX="958.0" layoutY="6.0" minWidth="44.0" onAction="#Quit" prefHeight="32.0" prefWidth="64.0" style="-fx-background-color: #D25F5F;" text="X" />
+                  <JFXButton fx:id="btnThoat1" buttonType="RAISED" layoutX="885.0" layoutY="6.0" minHeight="18.0" minWidth="44.0" onAction="#Quit" prefHeight="32.0" prefWidth="64.0" style="-fx-background-color: #6395C4;" text="_" />
+                  <JFXButton fx:id="btnThoat11" buttonType="RAISED" layoutX="14.0" layoutY="6.0" minHeight="18.0" minWidth="44.0" onAction="#Quit" prefHeight="32.0" prefWidth="107.0" style="-fx-background-color: #6395C4;" text="Trợ giúp" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="42.0" layoutY="86.0" prefHeight="661.0" prefWidth="493.0" style="-fx-background-color: linear-gradient(to right, #093028, #237a57);">
+               <children>
+                  <ImageView fitHeight="503.0" fitWidth="493.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Picture/Pic/161712919_2843877049217004_2570415608547098846_n.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
          </children>
       </AnchorPane>
    </children>
