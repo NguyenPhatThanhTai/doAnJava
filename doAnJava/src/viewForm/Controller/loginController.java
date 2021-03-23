@@ -1,6 +1,7 @@
 package viewForm.Controller;
 
 import DAO.doDao;
+import Model.accountStaffModel;
 import com.sun.jnlp.ApiDialog;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -37,7 +38,7 @@ public class loginController implements Initializable {
             alert.showAndWait();
         }else {
             doDao dao = new doDao();
-            if(dao.checkLogin(txtTaiKhoan.getText(), txtMatKhau.getText())){
+            if(dao.checkLogin(new accountStaffModel(txtTaiKhoan.getText(), txtMatKhau.getText()))){
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setHeaderText("Đăng nhập thành công!");
                 alert.showAndWait();
@@ -47,7 +48,7 @@ public class loginController implements Initializable {
                 Parent root = loader.load();
 
                 mainController mainController = loader.getController();
-                mainController.showInfomation(txtTaiKhoan.getText());
+                mainController.showInfomation(dao.getStaffLogin(txtTaiKhoan.getText()));
 
                 Stage stage = new Stage();
                 stage.initStyle(StageStyle.UNDECORATED); // tắt thanh top bar

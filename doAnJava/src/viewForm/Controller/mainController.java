@@ -1,6 +1,7 @@
 package viewForm.Controller;
 
 import DAO.doDao;
+import Model.accountStaffModel;
 import Model.customerModel;
 import com.jfoenix.controls.JFXButton;
 import javafx.application.Platform;
@@ -38,10 +39,18 @@ public class mainController implements Initializable {
     @FXML
     private JFXButton btnMinimized;
 
-    public void showInfomation(String name){
+    public void showInfomation(accountStaffModel accountStaffModel){
+        String name;
+
         SimpleDateFormat formatter= new SimpleDateFormat("HH:mm 'ngày' dd-MM-yyyy ");
         Date date = new Date(System.currentTimeMillis());
         System.out.println(formatter.format(date));
+        if ( accountStaffModel != null){
+            name = accountStaffModel.getStaff_Role();
+        }
+        else {
+            name = "Không định dạng được";
+        }
         lbUserName.setText("Xin chào: " + name + ", bây giờ là: " + formatter.format(date));
     }
 
