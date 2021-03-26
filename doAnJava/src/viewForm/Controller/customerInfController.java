@@ -9,6 +9,7 @@ import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -17,6 +18,7 @@ import javafx.scene.input.MouseEvent;
 
 import java.net.URL;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.time.LocalDate;
@@ -51,7 +53,7 @@ public class customerInfController implements Initializable {
     private TableColumn<customerModel, String> colCustomerPhone;
 
     @FXML
-    private TableColumn<customerModel, String> colCustomerTimeAdd;
+    private TableColumn<customerModel, Date> colCustomerTimeAdd;
 
     @FXML
     private JFXButton btnTest;
@@ -84,7 +86,7 @@ public class customerInfController implements Initializable {
     private TextField txtNgayThem;
 
     @FXML
-    private JFXDatePicker txtNgaySinh;
+    private DatePicker txtNgaySinh;
 
 
     @FXML
@@ -99,7 +101,7 @@ public class customerInfController implements Initializable {
         colCustomerBirth.setCellValueFactory(new PropertyValueFactory<customerModel, String>("Customer_Birth"));
         colCustomerEmail.setCellValueFactory(new PropertyValueFactory<customerModel, String>("Customer_Email"));
         colCustomerPhone.setCellValueFactory(new PropertyValueFactory<customerModel, String>("Customer_Phone"));
-        colCustomerTimeAdd.setCellValueFactory(new PropertyValueFactory<customerModel, String>("Customer_TimeAdd"));
+        colCustomerTimeAdd.setCellValueFactory(new PropertyValueFactory<customerModel, Date>("Customer_TimeAdd"));
 
         listCustomer = dao.getAllCustomer();
         tableListCustomer.setItems(listCustomer);
@@ -121,7 +123,7 @@ public class customerInfController implements Initializable {
                 txtNgaySinh.setValue(LocalDate.parse(cus.getCustomer_Birth()));
                 txtEmail.setText(cus.getCustomer_Email());
                 txtSoDienThoai.setText(cus.getCustomer_Phone());
-                txtNgayThem.setText(cus.getCustomer_TimeAdd());
+                txtNgayThem.setText(String.valueOf(cus.getCustomer_TimeAdd()));
             }
         });
     }

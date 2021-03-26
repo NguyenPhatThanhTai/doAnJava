@@ -3,20 +3,26 @@ package viewForm.Controller;
 import DAO.doDao;
 import Model.accountStaffModel;
 import Model.customerModel;
+import Model.infStaffModel;
 import com.jfoenix.controls.JFXButton;
 import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import viewForm.Main;
 
 
+import javax.swing.text.Element;
+import javax.swing.text.html.ImageView;
 import java.io.FileNotFoundException;
 import java.net.URL;
 import java.sql.Connection;
@@ -27,11 +33,10 @@ import java.util.Date;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
+import static javafx.scene.input.KeyCode.R;
+
 public class mainController implements Initializable {
 
-
-    @FXML
-    private Label lbUserName;
 
     @FXML
     private BorderPane paneLoad;
@@ -39,30 +44,63 @@ public class mainController implements Initializable {
     @FXML
     private JFXButton btnMinimized;
 
-    public void showInfomation(accountStaffModel accountStaffModel){
+    @FXML
+    private Label lbTime;
+
+    @FXML
+    private Label lbDate;
+
+    @FXML
+    private Label lbTb1;
+
+    @FXML
+    private Label lbTb2;
+
+    @FXML
+    private Label lbTb3;
+
+    @FXML
+    private Label lbTb4;
+
+    @FXML
+    private Label labelThongBao;
+
+    @FXML
+    private JFXButton btnThongTinKhachHang;
+
+    @FXML
+    private JFXButton btnHome;
+
+    public void showInfomation(infStaffModel infStaffModel){
         String name;
 
-        SimpleDateFormat formatter= new SimpleDateFormat("HH:mm 'ngày' dd-MM-yyyy ");
+        SimpleDateFormat formatter= new SimpleDateFormat("'ngày' dd-MM-yyyy ");
+        SimpleDateFormat time= new SimpleDateFormat("HH:mm");
         Date date = new Date(System.currentTimeMillis());
         System.out.println(formatter.format(date));
-        if ( accountStaffModel != null){
-            name = accountStaffModel.getStaff_Role();
+        if ( infStaffModel != null){
+            name = infStaffModel.getStaff_Name();
         }
         else {
             name = "Không định dạng được";
         }
-        lbUserName.setText("Xin chào: " + name + ", bây giờ là: " + formatter.format(date));
+        lbTime.setText(time.format(date));
+        lbDate.setText(formatter.format(date)+"Xin chào: " + name + "");
     }
 
     public void showCustomerPage(){
 //        pageLoad object = new pageLoad();
 //        Pane view = object.getPage("customerInf.fxml");
 //        paneLoad.setCenter(view);
+
+
+        setEffectClick(false, "#4777A7", "ThongTinKhachHang");
+
         new Thread(()->{
                 Platform.runLater(()->{
                     pageLoad object = new pageLoad();
                     Pane view = object.getPage("customerInf.fxml");
-                    paneLoad.setCenter(view);
+                    paneLoad.setTop(view);
                 });
             try {
                 Thread.sleep(60);
@@ -70,6 +108,41 @@ public class mainController implements Initializable {
                 e.printStackTrace();
             }
         }).start(); 
+    }
+
+    public void showWelcomePage(){
+        new Thread(()->{
+            Platform.runLater(()->{
+                paneLoad.setTop(lbTime);
+            });
+            try {
+                Thread.sleep(60);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }).start();
+        setEffectClick(true, "#4777A7", "Home");
+    }
+
+    public void setEffectClick(boolean set, String color, String button){
+        lbDate.setVisible(set);
+        lbTb1.setVisible(set);
+        lbTb2.setVisible(set);
+        lbTb3.setVisible(set);
+        lbTb4.setVisible(set);
+        lbTime.setVisible(set);
+        labelThongBao.setVisible(set);
+
+        switch (button){
+            case "ThongTinKhachHang":
+                btnThongTinKhachHang.setStyle("-fx-background-color: "+color);
+                btnHome.setStyle("-fx-background-color: transparent");
+                break;
+            case "Home":
+                btnHome.setStyle("-fx-background-color: "+color);
+                btnThongTinKhachHang.setStyle("-fx-background-color: transparent");
+                break;
+        }
     }
 
     public void Quit(){
@@ -93,9 +166,7 @@ public class mainController implements Initializable {
             obj.setIconified(true);
         });
     }
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
     }
 }

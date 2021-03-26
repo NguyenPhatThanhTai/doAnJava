@@ -1,5 +1,7 @@
 package Model;
 
+import java.util.Date;
+
 public class customerModel {
     private String Customer_Id;
     private String Customer_Name;
@@ -7,13 +9,13 @@ public class customerModel {
     private String Customer_Birth;
     private String Customer_Email;
     private String Customer_Phone;
-    private String Customer_TimeAdd;
+    private Date Customer_TimeAdd;
 
     public customerModel() {
 
     }
 
-    public customerModel(String customer_Id, String customer_Name, String customer_Sex, String customer_Birth, String customer_Email, String customer_Phone, String customer_TimeAdd) {
+    public customerModel(String customer_Id, String customer_Name, String customer_Sex, String customer_Birth, String customer_Email, String customer_Phone, Date customer_TimeAdd) {
         Customer_Id = customer_Id;
         Customer_Name = customer_Name;
         Customer_Sex = customer_Sex;
@@ -71,11 +73,11 @@ public class customerModel {
         Customer_Phone = customer_Phone;
     }
 
-    public String getCustomer_TimeAdd() {
+    public Date getCustomer_TimeAdd() {
         return Customer_TimeAdd;
     }
 
-    public void setCustomer_TimeAdd(String customer_TimeAdd) {
+    public void setCustomer_TimeAdd(Date customer_TimeAdd) {
         Customer_TimeAdd = customer_TimeAdd;
     }
 }

@@ -3,6 +3,7 @@ package DAO;
 import Connection.connectSQL;
 import Model.accountStaffModel;
 import Model.customerModel;
+import Model.infStaffModel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import jbcrypt.BCrypt;
@@ -69,18 +70,22 @@ public class doDao extends connectSQL {
         return check;
     }
 
-    public accountStaffModel getStaffLogin(String id){
-        accountStaffModel accountStaffModel = new accountStaffModel();
-        String sql ="select * from [Account_Staff] where Staff_Id = " + "'" + id + "'";
+    public infStaffModel getStaffLogin(String id){
+        infStaffModel infStaffModel = new infStaffModel();
+        String sql ="select * from [Inf_Staff] where Staff_Id = " + "'" + id + "'";
         Connection conn =super.getJDBCConnection();
         try {
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
             if (rs.next()) {
-                accountStaffModel.setStaff_Account(rs.getString("Staff_Account"));
-                accountStaffModel.setStaff_Id(rs.getString("Staff_Id"));
-                accountStaffModel.setStaff_Password(rs.getString("Staff_Password"));
-                accountStaffModel.setStaff_Role(rs.getString("Staff_Role"));
+                infStaffModel.setStaff_Id(rs.getString("Staff_Id"));
+                infStaffModel.setStaff_Name(rs.getString("Staff_Name"));
+                infStaffModel.setStaff_Sex(rs.getString("Staff_Sex"));
+                infStaffModel.setStaff_Address(rs.getString("Staff_Address"));
+                infStaffModel.setStaff_Birth(rs.getString("Staff_Birth"));
+                infStaffModel.setStaff_Deparment(rs.getString("Staff_Deparment"));
+                infStaffModel.setStaff_Phone(rs.getString("Staff_Phone"));
+                infStaffModel.setStaff_TimeAdd(Date.valueOf(rs.getString("Staff_TimeAdd")));
             }
             else {
                 return null;
@@ -88,7 +93,7 @@ public class doDao extends connectSQL {
         }catch (SQLException e){
             e.printStackTrace();
         }
-        return accountStaffModel;
+        return infStaffModel;
     }
 
     public ObservableList<customerModel> getAllCustomer(){
@@ -109,7 +114,7 @@ public class doDao extends connectSQL {
                 }
                 list.add(new customerModel(rs.getString("Customer_Id"), rs.getString("Customer_Name"),
                         sex, rs.getString("Customer_Birth"), rs.getString("Customer_Email"),
-                        rs.getString("Customer_Phone"), rs.getString("Customer_TimeAdd")));
+                        rs.getString("Customer_Phone"), Date.valueOf(rs.getString("Customer_TimeAdd"))));
             }
         }catch (SQLException e){
             e.printStackTrace();

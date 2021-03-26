@@ -2,6 +2,7 @@ package viewForm.Controller;
 
 import DAO.doDao;
 import Model.accountStaffModel;
+import com.jfoenix.controls.JFXButton;
 import com.sun.jnlp.ApiDialog;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -31,6 +32,9 @@ public class loginController implements Initializable {
     public TextField txtTaiKhoan;
     @FXML
     public TextField txtMatKhau;
+    @FXML
+    private JFXButton btnMinimized;
+
     public void DangNhap(ActionEvent e) throws IOException{
         if (txtTaiKhoan.getText().equals("") && txtMatKhau.getText().equals("")){
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -82,6 +86,13 @@ public class loginController implements Initializable {
         if (result.orElse(bar) == foo) {
             System.exit(1);
         }
+    }
+
+    public void Minimized(){
+        btnMinimized.setOnMouseClicked( event -> {
+            Stage obj = (Stage) btnMinimized.getScene().getWindow();
+            obj.setIconified(true);
+        });
     }
 
     @Override
